@@ -3,6 +3,7 @@ clear
 sleep 2
 echo "instaling software required .........."
 sleep 2
+rm FACRs.py
 #instaling ... 
 sudo apt update -y
 sudo apt upgrade -y
