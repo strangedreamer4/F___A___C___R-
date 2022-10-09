@@ -16,6 +16,9 @@ apt upgrade -y
 apt install python -y 
 apt install python2 -y
 apt install espeak -y
+pkg install python -y
+pkg install python2 -y
+pkg install espeak -y
 clear
 # done
 sleep 2
