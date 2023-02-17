@@ -41,7 +41,7 @@ if [ "$(whoami)" = "root" ]; then
     if [ "$ans" = "1" ]; then
         python3 FACR.py
     else
-        python3 FACRs.py
+        python3 FACRc.py
     fi
 else
     sleep 2
@@ -58,7 +58,7 @@ else
     if [ "$ans" = "1" ]; then
         python3 FACR.py
     else
-        python3 FACRs.py
+        python3 FACRc.py
     fi
 fi
 
