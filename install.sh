@@ -1,33 +1,67 @@
 
-clear 
-sleep 2
-echo "instaling software required .........."
-sleep 2
-rm FACRs.py
-#instaling ... 
-sudo apt update -y
-sudo apt upgrade -y
-sudo apt install python -y
-sudo apt install python2 -y
-sleep 2
-apt update -y 
-apt upgrade -y
-apt install python -y 
-apt install python2 -y
-pkg install python -y
-pkg install python2 -y
-clear
-# done
-echo " Do you want to run the server or client if server press 1 or client press 2 ?
-read ans
-if [ "$ans" = "1" ];
-then
-      python3 FACR.py
+#!/usr/bin/env bash
+
+set -e
+
+# ASCII art
+echo -e "\033[36m
+                             ╭━━━┳━━━┳━━━┳━━━╮
+                             ┃╭━━┫╭━╮┃╭━╮┃╭━╮┃
+                             ┃╰━━┫┃╱┃┃┃╱╰┫╰━╯┃
+                             ┃╭━━┫╰━╯┃┃╱╭┫╭╮╭╯
+                             ┃┃╱╱┃╭━╮┃╰━╯┃┃┃╰╮
+                             ╰╯╱╱╰╯╱╰┻━━━┻╯╰━╯
+                             server v 1.2 | StRaNgEdReAmEr
+	                     for queries: oohacker008@gmail.com\033[0m"
+
+# Banner message
+echo -e "\n\033[33mWelcome to the chat server System.\033[0m"
+
+# Loop to repeatedly prompt for password
+while true; do
+  echo -e "\n\033[36mPlease enter your password to continue:\033[0m"
+  read -s password
+
+  if [ "$password" == "12345" ]; then
+    echo -e "\n\033[32mPassword accepted.\033[0m"
+    break
+  else
+    echo -e "\n\033[31mIncorrect password. Please try again.\033[0m"
+  fi
+done
+
+# Update and install required packages
+if [ "$(whoami)" = "root" ]; then
+    sudo apt update -y
+    sudo apt upgrade -y
+    # Run server or client
+    clear
+    echo -e "\033[36mDo you want to run the server or client? If server, press 1. If client, press 2.\033[0m"
+    read ans
+
+    if [ "$ans" = "1" ]; then
+        python3 FACR.py
+    else
+        python3 FACRs.py
+    fi
 else
-      python3 FACRs.py
+    sleep 2
+    apt update -y 
+    apt upgrade -y
+    apt install python -y 
+    apt install python2 -y
+    pkg install python -y
+    pkg install python2 -y
+    clear
+    echo -e "\033[36mDo you want to run the server or client? If server, press 1. If client, press 2.\033[0m"
+    read ans
+
+    if [ "$ans" = "1" ]; then
+        python3 FACR.py
+    else
+        python3 FACRs.py
+    fi
 fi
 
-
-
-sleep 2
-exit 0
+# Catch and handle errors
+trap 'echo -e "\n\033[31mError: Script failed with error code $?\033[0m" >&2' ERR
