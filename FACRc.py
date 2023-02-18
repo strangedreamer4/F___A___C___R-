@@ -1,4 +1,4 @@
-'Chat Room Connection - Client-To-Client'
+import socket
 import threading
 import os
 import time
@@ -55,4 +55,5 @@ if __name__ == '__main__':
     ip = input("Enter server IP: ")
     port = int(input("Enter server port: "))
     start_client(ip, port)
+    
     
