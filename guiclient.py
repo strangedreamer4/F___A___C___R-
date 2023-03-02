@@ -5,7 +5,7 @@ import tkinter as tk
 class ClientGUI:
     def __init__(self):
         self.root = tk.Tk()
-        self.root.title("FRIENDS ANONYMOUS CHAT ROOM")
+        self.root.title("\__F__A__C__R__/")
 
         self.ip_label = tk.Label(self.root, text="Enter server IP:")
         self.ip_label.pack()
