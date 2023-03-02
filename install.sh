@@ -39,9 +39,9 @@ if [ "$(whoami)" = "root" ]; then
     read ans
 
     if [ "$ans" = "1" ]; then
-        python3 FACR.py
+        python3 guiserver.py
     else
-        python3 FACRc.py
+        python3 guiclient.py
     fi
 else
     sleep 2
