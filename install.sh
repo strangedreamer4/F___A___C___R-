@@ -41,7 +41,7 @@ if [ "$(whoami)" = "root" ]; then
     if [ "$ans" = "1" ]; then
         python3 guiserver.py
     else
-        guiclient.v2.py
+       python3 guiclient.v2.py
     fi
 else
     sleep 2
