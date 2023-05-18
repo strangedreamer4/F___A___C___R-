@@ -63,7 +63,7 @@ class ClientGUI:
         self.root.mainloop()
 
     def redirect_to_website(self):
-        webbrowser.open("https://webchatroom4.netlify.app/")
+        webbrowser.open("https://webchatroomv4.netlify.app/")
 
 
     # rest of the code
